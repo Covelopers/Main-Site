@@ -1,22 +1,32 @@
 .app-container {
   font-family: 'Inter', sans-serif;
-  height: 100vh;
-  width: 100vw;
+
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 200vh;
+  width: 100vw;
   background-color: #56bdb2;
-  position: relative;
-  overflow: hidden;
+}
+
+
+.app-container::-webkit-scrollbar {
+  display: none;
 }
 
 .content-container {
-  z-index: 2;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
   padding: 20px;
   max-width: 600px;
   position: relative;
+  color: white;
+  z-index: 10;
 }
 
 .title {
@@ -31,6 +41,22 @@
   font-weight: 400;
   margin-bottom: 40px;
   opacity: 0.9;
+}
+
+
+.contact-btn {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: teal;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-btn:hover {
+  background: #005f5c;
 }
 
 @media (max-width: 768px) {
