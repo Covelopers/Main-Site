@@ -5,13 +5,11 @@ export function Navbar() {
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (!section) return;
-
     const yOffset = -80; // navbar height
     const y =
       section.getBoundingClientRect().top +
       window.pageYOffset +
       yOffset;
-
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
@@ -21,7 +19,6 @@ export function Navbar() {
         <div className="nav-left">
           <img src={logo} alt="Covelopers Logo" className="logo-img" />
         </div>
-
         <div className="nav-links">
           <button onClick={() => scrollToSection("workflow")}>
             The Workflow
@@ -33,17 +30,17 @@ export function Navbar() {
             FAQ
           </button>
         </div>
-
         <div className="nav-right">
-          <button
-            className="get-started-btn"
-            onClick={() => scrollToSection("contact")}
+          <a
+            href="https://discord.gg/your-discord-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="git-push-btn"
           >
-            Get Started
-          </button>
+            git push
+          </a>
         </div>
       </div>
     </nav>
   );
-};
-
+}

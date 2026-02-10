@@ -1,4 +1,6 @@
 import "./Footer.css";
+import { FaDiscord, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
 
 export function Footer() {
   return (
@@ -26,9 +28,25 @@ export function Footer() {
 
             <div className="footer-column">
               <h4>Community</h4>
-              <a href="#">Discord</a>
-              <a href="#">Twitter</a>
-              <a href="#">LinkedIn</a>
+              <a href="https://discord.gg/your-discord-link" target="_blank" rel="noopener noreferrer">
+                <FaDiscord className="social-icon" /> Discord
+              </a>
+              <a href="https://twitter.com/your-handle" target="_blank" rel="noopener noreferrer">
+                <FaTwitter className="social-icon" /> Twitter
+              </a>
+              <a href="https://linkedin.com/company/your-company" target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="social-icon" /> LinkedIn
+              </a>
+              <a href="https://instagram.com/your-handle" target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="social-icon" /> Instagram
+              </a>
+            </div>
+
+            <div className="footer-column">
+              <h4>Contact</h4>
+              <a href="mailto:hello@covelopers.com">
+                <MdEmail className="social-icon" /> Email Us
+              </a>
             </div>
           </div>
         </div>

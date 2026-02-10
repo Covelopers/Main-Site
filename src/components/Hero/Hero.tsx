@@ -1,82 +1,54 @@
 import "./Hero.css";
-import  { BackgroundWave } from "../Background/BackgroundWave.tsx";
+import { BackgroundWave } from "../Background/BackgroundWave.tsx";
+import { SiNextdotjs, SiReact, SiTypescript, SiSupabase, SiTailwindcss, SiPostgresql, SiGithub } from 'react-icons/si';
 
 export function Hero() {
   return (
     <>
       <header className="hero">
         <BackgroundWave />
-        <div className="hero-grid">
-          {/* LEFT: COPY */}
-          <div className="hero-copy">
+        
+        <div className="hero-content-wrapper">
+          <div className="hero-content-center">
             <div className="version-pill">
               <span className="pulse-dot" />
               <span>v2.0.0 :: Production Ready</span>
             </div>
+            
             <h1>
               Build Software.
               <br />
               <span className="gradient-text">Not Tutorials.</span>
             </h1>
+            
             <p>
               Stop watching videos. Join a professional engineering team. Manage
               the backlog, open Pull Requests, survive Code Reviews, and ship to
               production.
             </p>
+            
             <div className="hero-actions">
               <a href="#contact" className="apply-btn">
                 Start Building
+                <span>→</span>
               </a>
               <a href="#workflow" className="secondary-btn">
-                View the Workflow
+                How it Works
               </a>
             </div>
           </div>
 
-          {/* RIGHT: TERMINAL */}
-          <div className="hero-terminal">
-            <div className="terminal-glow" />
-            <div className="terminal-window">
-              <div className="terminal-header">
-                <div>
-                  <div className="dot red" />
-                  <div className="dot yellow" />
-                  <div className="dot green" />
-                </div>
-                <div className="terminal-title">
-                  usr@covelopers:~/project
-                </div>
-                <div style={{ width: "40px" }}></div>
-              </div>
-              <div className="terminal-body">
-                <div>
-                  ➜ ~/project git checkout -b feature/user-auth
-                </div>
-                <div className="muted">
-                  Switched to a new branch 'feature/user-auth'
-                </div>
-                <br />
-                <div>
-                  ➜ ~/project npm run dev
-                </div>
-                <div className="muted">
-                  available on http://localhost:3000 <br />
-                  ready in 124ms
-                </div>
-                <div className="code-block">
-                  <div className="comment">// src/components/Auth.tsx</div>
-                  <div>
-                    export const Auth = () =&gt; {"{"}
-                  </div>
-                  <div className="indent">
-                    const [user, setUser] = useState(null);
-                  </div>
-                  <div className="indent comment">
-                    // TODO: Implement Supabase login
-                  </div>
-                  <div>{"}"}</div>
-                </div>
-              </div>
+          {/* Trusted Technologies Bar */}
+          <div className="tech-stack-bar">
+            <p className="tech-label">Master the Modern Stack</p>
+            <div className="tech-icons">
+              <SiNextdotjs size={32} />
+              <SiReact size={32} color="#61DAFB" />
+              <SiTypescript size={32} color="#3178C6" />
+              <SiSupabase size={32} color="#3ECF8E" />
+              <SiTailwindcss size={32} color="#06B6D4" />
+              <SiPostgresql size={32} color="#4169E1" />
+              <SiGithub size={32} />
             </div>
           </div>
         </div>
@@ -139,7 +111,7 @@ export function Hero() {
           <div className="vscode-mockup">
             <div className="terminal-window">
               <div className="terminal-header">
-                <div>
+                <div className="terminal-dots">
                   <div className="dot red" />
                   <div className="dot yellow" />
                   <div className="dot green" />
