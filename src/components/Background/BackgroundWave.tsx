@@ -1,6 +1,6 @@
-import './background.css'
+import './BackgroundWave.css'
 
-function Background() {
+export function BackgroundWave() {
   return (
     <svg
         className="background-wave-group"
@@ -22,5 +22,3 @@ function Background() {
       </svg>
   )
 }
-
-export default Background

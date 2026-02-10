@@ -1,0 +1,22 @@
+:root {
+  --brand-900: #002439;
+  --brand-800: #003a50;
+  --brand-700: #035a53;
+  --brand-600: #015b55;
+  --brand-500: #02918b;
+  --brand-400: #019f92;
+
+  --bg-dark: #002439;
+  --bg-card: #003a50;
+
+  --text-main: #ffffff;
+  --text-muted: #bcc4c3;
+
+  --accent: #02918b;
+  --accent-soft: #019f92;
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+
+  --max-width: 1200px;
+}

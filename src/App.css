@@ -1,69 +1,59 @@
-.app-container {
-  font-family: 'Inter', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+main {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 200vh;
-  width: 100vw;
-  background-color: #56bdb2;
 }
 
-
-.app-container::-webkit-scrollbar {
-  display: none;
-}
-
-.content-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  padding: 20px;
-  max-width: 600px;
+/* Remove default section padding - let each component control its own */
+main section {
   position: relative;
-  color: white;
-  z-index: 10;
 }
 
-.title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.description {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  font-weight: 400;
-  margin-bottom: 40px;
-  opacity: 0.9;
+button {
+  font-family: inherit;
 }
 
-
-.contact-btn {
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background: teal;
-  border: none;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-.contact-btn:hover {
-  background: #005f5c;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-@media (max-width: 768px) {
-  .title {
-    font-size: 2.5rem;
-  }
-  .description {
-    font-size: 1rem;
-  }
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }

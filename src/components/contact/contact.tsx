@@ -1,59 +1,65 @@
-import React from "react";
-import "./contact.css";
+import "./Contact.css";
 
-const Contact: React.FC = () => {
+export function Contact() {
   return (
-    <div id="contact" className="contact-section">
-      <form
-        className="contact-form"
-        action="https://formsubmit.co/fe901deddbfb3f5351426dee5e93bb62"
-        method="POST"
-      >
-        <input type="text" name="_honey" style={{ display: "none" }} />
-
-        <div className="form-group">
+    <section id="contact">
+      <div className="contact-section">
+        <div className="contact-header">
+          <h2>Get Started</h2>
+          <p>Ready to build real software? Apply now to join our next cohort.</p>
+        </div>
+        
+        <form
+          className="contact-form"
+          action="https://formsubmit.co/fe901deddbfb3f5351426dee5e93bb62"
+          method="POST"
+        >
+          <input type="text" name="_honey" style={{ display: "none" }} />
+          
+          <div className="form-group">
+            <label className="contact-label">
+              Name
+              <input
+                type="text"
+                name="name"
+                className="contact-input"
+                placeholder="Enter your name"
+                required
+              />
+            </label>
+            <label className="contact-label">
+              Email
+              <input
+                type="email"
+                name="email"
+                className="contact-input"
+                placeholder="Enter your email"
+                required
+              />
+            </label>
+          </div>
+          
           <label className="contact-label">
-            <input
-              type="text"
-              name="name"
-              className="contact-input"
-              placeholder="Enter Name"
+            Message
+            <textarea
+              name="message"
+              className="contact-textarea"
+              placeholder="Tell us about your experience and goals..."
+              rows={6}
               required
             />
           </label>
-
-          <label className="contact-label">
-            <input
-              type="email"
-              name="email"
-              className="contact-input"
-              placeholder="Enter Email"
-              required
-            />
-          </label>
-        </div>
-
-        <label className="contact-label">
-          <textarea
-            name="message"
-            className="contact-textarea"
-            placeholder="Your message here..."
-            rows={6}
-            required
-          />
-        </label>
-
-        <div className="form-actions">
-          <button type="submit" className="contact-button">
-            Send
-          </button>
-        </div>
-
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value={window.location.origin} />
-      </form>
-    </div>
+          
+          <div className="form-actions">
+            <button type="submit" className="contact-button">
+              Submit Application
+            </button>
+          </div>
+          
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value={window.location.origin} />
+        </form>
+      </div>
+    </section>
   );
-};
-
-export default Contact;
+}

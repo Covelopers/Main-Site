@@ -1,42 +1,93 @@
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 0.5rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 36, 57, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .nav-links {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    color: white;
-    z-index: 1000;
+  }
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  margin-left: 24px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links button:hover {
+  color: var(--text-main);
+}
+
+.logo-img {
+  height: 100px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.git-push-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--accent-soft);
+  border: 1px solid transparent;
+  color: var(--text-main);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .git-push-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+    box-shadow: 0 0 0 rgba(2, 145, 139, 0);
   }
 
-  .navbar-content{
-    display: flex;
-    flex-direction: row;
-    width: 95%;
-    align-items: center;
-    justify-content: space-between;
+  .git-push-btn:hover {
+    background: var(--accent);
+    border-color: rgba(2, 145, 139, 0.5);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(2, 145, 139, 0.4);
   }
-  
+}
 
-  .get-started-btn {
-    padding: 0.5rem 1rem;
-    border: 2px solid #04928B;
-    background: transparent;
-    color: #04928B;
-    border-radius: 10px;
-    cursor: pointer;
-    height: 50px;
-    transition: all 0.3s ease;
-  }
-  
-  .get-started-btn:hover {
-    background: #043952;
-    color: #04928B;
-  }
+.logo-img {
+  height: 60px;
+  object-fit: contain;
+  cursor: pointer;
+}
 
+@media (min-width: 640px) {
   .logo-img {
     height: 100px;
-    object-fit: contain;
   }
+}
