@@ -131,3 +131,10 @@
   color: var(--text-muted);
   margin: 0;
 }
+
+@media (max-width: 1320px) {
+  .workflow-header,
+  .workflow-grid {
+    padding: 0 24px;
+  }
+}

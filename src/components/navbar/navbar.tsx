@@ -5,7 +5,7 @@ export function Navbar() {
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (!section) return;
-    const yOffset = -80; // navbar height
+    const yOffset = -80;
     const y =
       section.getBoundingClientRect().top +
       window.pageYOffset +

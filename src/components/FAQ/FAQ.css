@@ -104,3 +104,9 @@
     font-size: 15px;
   }
 }
+
+@media (max-width: 840px) {
+  .faq {
+    padding: 72px 24px;
+  }
+}
