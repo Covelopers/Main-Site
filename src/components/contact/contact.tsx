@@ -1,7 +1,6 @@
-import React from "react";
-import "./contact.css";
+import "./Contact.css";
 
-const Contact: React.FC = () => {
+export function Contact() {
   return (
     <div id="contact" className="contact-section">
       <form
@@ -55,5 +54,3 @@ const Contact: React.FC = () => {
     </div>
   );
 };
-
-export default Contact;

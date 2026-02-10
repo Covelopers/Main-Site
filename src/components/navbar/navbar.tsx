@@ -1,8 +1,11 @@
-import React from "react";
-import './navbar.css'
+import './Navbar.css'
 import logo from "../../assets/Covelopers.png";
 
-const Navbar: React.FC = () => {
+export function Navbar() {
+
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <nav className="navbar">
@@ -16,4 +19,3 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;

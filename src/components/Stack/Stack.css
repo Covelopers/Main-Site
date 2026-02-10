@@ -1,0 +1,22 @@
+.stack h2 {
+  font-size: 40px;
+  margin-bottom: 48px;
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.stack ul li {
+  margin-bottom: 12px;
+}
+
+.terminal {
+  background: #001a2a;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  font-family: monospace;
+  color: var(--accent-soft);
+}

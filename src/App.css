@@ -1,4 +1,22 @@
-.app-container {
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-main);
+}
+
+main section {
+  padding: 120px 24px;
+}
+
+section > * {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+ /* .app-container {
   font-family: 'Inter', sans-serif;
 
   position: relative;
@@ -15,9 +33,9 @@
 
 .app-container::-webkit-scrollbar {
   display: none;
-}
+} */
 
-.content-container {
+/* .content-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,4 +84,4 @@
   .description {
     font-size: 1rem;
   }
-}
+}  */

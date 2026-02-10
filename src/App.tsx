@@ -1,7 +1,12 @@
 import './App.css';
-import Background  from './components/Background/BackgroundWave'
-import Navbar from './components/Navbar/navbar'
-import Contact from './components/contact/contact'
+
+import  { Navbar } from "./components/Navbar/Navbar";
+import  { Hero }  from "./components/Hero/Hero";
+import  { Workflow }  from "./components/Workflow/Workflow";
+import  { Stack }  from "./components/Stack/Stack";
+import  { FAQ } from "./components/FAQ/FAQ";
+import  { Contact } from "./components/Contact/Contact";
+import  { Footer } from "./components/Footer/Footer";
 
 function App() {
 
@@ -15,7 +20,28 @@ function App() {
   return (
     <div className="app-container">
       <Navbar />
-      <div className="content-container">
+
+      <main>
+        <section id="hero">
+          <Hero />
+        </section>
+
+        <section id="workflow">
+          <Workflow />
+        </section>
+
+        <section id="stack">
+          <Stack />
+        </section>
+        <Contact />
+        <section id="faq">
+          <FAQ />
+        </section>
+      </main>
+
+      <Footer />
+      <Navbar />
+      {/* <div className="content-container">
         <h1 className="title">covelopers</h1>
         <p className="description">
           A startup company made up of university graduates
@@ -25,8 +51,8 @@ function App() {
             Contact Us
         </button>
       </div>
-      <Background />
-      <Contact />
+      <Background /> */}
+      
   </div>
   )
 }
