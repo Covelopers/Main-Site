@@ -1,5 +1,5 @@
 import "./Stack.css";
-import { SiNextdotjs, SiReact, SiTypescript, SiSupabase, SiTailwindcss, SiGithub } from 'react-icons/si';
+import { SiReact, SiSupabase, SiTailwindcss, SiGithub } from 'react-icons/si';
 
 export function Stack() {
   return (
