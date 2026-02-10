@@ -1,5 +1,5 @@
 import "./Footer.css";
-import { FaDiscord, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaDiscord, FaTwitter, FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
 export function Footer() {
@@ -21,24 +21,30 @@ export function Footer() {
           <div className="footer-links">
             <div className="footer-column">
               <h4>Platform</h4>
+              <a href="#hero">home</a>
               <a href="#workflow">Workflow</a>
               <a href="#stack">Tech Stack</a>
-              <a href="#contact">Apply</a>
+              <a href="#faq">FAQ</a>
+              <a href="#contact">contact</a>
             </div>
 
             <div className="footer-column">
               <h4>Community</h4>
-              <a href="https://discord.gg/your-discord-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://discord.gg/62vkfP7W5A" target="_blank" rel="noopener noreferrer">
                 <FaDiscord className="social-icon" /> Discord
               </a>
               <a href="https://twitter.com/your-handle" target="_blank" rel="noopener noreferrer">
                 <FaTwitter className="social-icon" /> Twitter
               </a>
-              <a href="https://linkedin.com/company/your-company" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/covelopers/?viewAsMember=true" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin className="social-icon" /> LinkedIn
               </a>
               <a href="https://instagram.com/your-handle" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="social-icon" /> Instagram
+              </a>
+
+              <a href="https://github.com/Covelopers" target="_blank" rel="noopener noreferrer">
+                <FaGithub className="social-icon" /> GitHub
               </a>
             </div>
 

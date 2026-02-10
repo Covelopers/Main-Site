@@ -17,7 +17,7 @@ export function Navbar() {
     <nav className="navbar">
       <div className="navbar-inner">
         <div className="nav-left">
-          <img src={logo} alt="Covelopers Logo" className="logo-img" />
+          <img onClick={() => scrollToSection("hero")} src={logo} alt="Covelopers Logo" className="logo-img" />
         </div>
         <div className="nav-links">
           <button onClick={() => scrollToSection("workflow")}>
@@ -29,10 +29,13 @@ export function Navbar() {
           <button onClick={() => scrollToSection("faq")}>
             FAQ
           </button>
+          <button onClick={() => scrollToSection("contact")}>
+            Contact
+          </button>
         </div>
         <div className="nav-right">
           <a
-            href="https://discord.gg/your-discord-link"
+            href="https://discord.gg/62vkfP7W5A"
             target="_blank"
             rel="noopener noreferrer"
             className="git-push-btn"
