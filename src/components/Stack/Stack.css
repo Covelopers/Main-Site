@@ -1,22 +1,146 @@
-.stack h2 {
-  font-size: 40px;
-  margin-bottom: 48px;
+/* Stack Section */
+.stack {
+  padding: 96px 24px;
+  background: rgba(0, 36, 57, 0.5);
 }
 
 .stack-grid {
+  max-width: 1280px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .stack-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.stack-grid > div:first-child h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 24px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+}
+
+@media (min-width: 768px) {
+  .stack-grid > div:first-child h2 {
+    font-size: 40px;
+  }
+}
+
+.stack-grid > div:first-child p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0 0 32px;
+}
+
+@media (min-width: 768px) {
+  .stack-grid > div:first-child p {
+    font-size: 20px;
+  }
+}
+
+.stack-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .stack-list li {
-  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
 }
 
+.stack-list li:hover {
+  border-color: var(--accent);
+  background: rgba(2, 145, 139, 0.05);
+  transform: translateX(4px);
+}
+
+.stack-list li::before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  background: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stack-list li > div {
+  flex: 1;
+}
+
+.stack-list strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.stack-list span {
+  display: block;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* Terminal Window for package.json */
 .terminal-window {
-  background: #001a2a;
+  background: var(--bg-dark);
   border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-header {
+  background: var(--bg-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 16px;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.terminal-window pre {
+  flex: 1;
+  margin: 0;
   padding: 24px;
-  font-family: monospace;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--accent-soft);
+  background: var(--bg-dark);
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Syntax highlighting for JSON */
+.terminal-window pre {
+  color: #c9d1d9;
 }
