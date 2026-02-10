@@ -1,6 +1,6 @@
 import './App.css';
-import Background  from './components/background/background'
-import Navbar from './components/navbar/navbar'
+import Background  from './components/Background/BackgroundWave'
+import Navbar from './components/Navbar/navbar'
 import Contact from './components/contact/contact'
 
 function App() {
