@@ -50,7 +50,7 @@ export function Footer() {
 
             <div className="footer-column">
               <h4>Contact</h4>
-              <a href="mailto:hello@covelopers.com">
+              <a href="mailto:codevelopers2025@gmail.com" target="_blank" rel="noopener noreferrer">
                 <MdEmail className="social-icon" /> Email Us
               </a>
             </div>
