@@ -5,20 +5,20 @@ const faqs = [
   {
     q: "Is this a coding bootcamp?",
     a: `No. Bootcamps prioritize curriculum content. We prioritize production
-experience. You already know how to code; we teach you how to be an engineer on
-a team.`,
+    experience. You already know how to code; we teach you how to be an engineer on
+    a team.`,
   },
   {
     q: "Do I get paid?",
     a: `No. This is an accelerator program designed to build your portfolio and
-experience. The "payment" is the high-quality items you can put on your CV to
-land a full-time role.`,
+    experience. The "payment" is the high-quality items you can put on your CV to
+    land a full-time role.`,
   },
   {
     q: "What is the time commitment?",
     a: `It is flexible, but results correlate with input. We recommend at least
-10–15 hours per week to make meaningful progress on tickets and collaborate
-effectively with your team.`,
+    10–15 hours per week to make meaningful progress on tickets and collaborate
+    effectively with your team.`,
   },
 ];
 

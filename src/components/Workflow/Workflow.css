@@ -9,12 +9,13 @@
   gap: 24px;
 }
 
-.workflow-card {
+.workflow-step {
   background: var(--bg-card);
   padding: 24px;
   border-radius: var(--radius-lg);
 }
 
-.workflow-card p {
+.workflow-step p {
   color: var(--text-muted);
 }
+

@@ -9,11 +9,11 @@
   gap: 32px;
 }
 
-.stack ul li {
+.stack-list li {
   margin-bottom: 12px;
 }
 
-.terminal {
+.terminal-window {
   background: #001a2a;
   border-radius: var(--radius-lg);
   padding: 24px;

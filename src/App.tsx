@@ -9,64 +9,32 @@ import  { Contact } from "./components/Contact/Contact";
 import  { Footer } from "./components/Footer/Footer";
 
 function App() {
-
-  // const scrollToSection = (id: string) => {
-  //   const section = document.getElementById(id);
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
-
-
-
-    //   <div className="app-container">
-  //     <Navbar />
-
-  //     <main>
-  //       <section id="hero">
-  //         <Hero />
-  //       </section>
-
-  //       <section id="workflow">
-  //         <Workflow />
-  //       </section>
-
-  //       <section id="stack">
-  //         <Stack />
-  //       </section>
-  //       <Contact />
-  //       <section id="faq">
-  //         <FAQ />
-  //       </section>
-  //     </main>
-
-  //     <Footer />
-  //     <Navbar />
-  //     {/* <div className="content-container">
-  //       <h1 className="title">covelopers</h1>
-  //       <p className="description">
-  //         A startup company made up of university graduates
-  //         utilising AI in various projects to help other graduates.
-  //       </p>
-  //       <button className="contact-btn" onClick={() => scrollToSection("contact")}>
-  //           Contact Us
-  //       </button>
-  //     </div>
-  //     <Background /> */}
-      
-  // </div>
-
-
   return (
-<>
-          <Navbar />
-      <Hero />
-      <Workflow />
-      <Stack />
-      <FAQ />
-      <Contact />
+    <>
+      <Navbar />
+      <main>
+        <section id="hero">
+          <Hero />
+        </section>
+
+        <section id="workflow" className="workflow">
+          <Workflow />
+        </section>
+
+        <section id="stack" className="stack">
+          <Stack />
+        </section>
+
+        <section id="faq" className="faq">
+          <FAQ />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
       <Footer />
-      </>
+    </>
   )
 }
 
