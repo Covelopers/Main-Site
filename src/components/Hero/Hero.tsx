@@ -1,30 +1,92 @@
 import "./Hero.css";
-import  { BackgroundWave } from "../Background/BackgroundWave.tsx";
-
+// import  { BackgroundWave } from "../Background/BackgroundWave.tsx";
+      {/* <BackgroundWave /> */}
 export function Hero() {
   return (
-    <div className="hero">
-      <BackgroundWave />
 
-      <div className="hero-content">
-        <span className="pill">Engineering-first community</span>
+          <header className="hero">
+      <div className="hero-overlay" />
 
-        <h1>
-          Build real software.
-          <br />
-          <span className="gradient-text">Together.</span>
-        </h1>
+      <div className="hero-grid">
+        {/* LEFT: COPY */}
+        <div className="hero-copy">
+          <div className="version-pill">
+            <span className="pulse-dot" />
+            <span>v2.0.0 :: Production Ready</span>
+          </div>
 
-        <p>
-          Covelopers is a collaborative engineering space where developers design,
-          review, and ship production-grade systems.
-        </p>
+          <h1>
+            Build Software.
+            <br />
+            <span className="gradient-text">Not Tutorials.</span>
+          </h1>
 
-        <div className="hero-actions">
-          <button className="primary">Join the community</button>
-          <button className="secondary">Learn more</button>
+          <p>
+            Stop watching videos. Join a professional engineering team. Manage
+            the backlog, open Pull Requests, survive Code Reviews, and ship to
+            production.
+          </p>
+
+          <div className="hero-actions">
+            <a href="#" className="apply-btn">
+              Start Building
+            </a>
+            <a href="#workflow" className="secondary-btn">
+              View the Workflow
+            </a>
+          </div>
+        </div>
+
+        {/* RIGHT: TERMINAL */}
+        <div className="hero-terminal">
+          <div className="terminal-glow" />
+
+          <div className="terminal-window">
+            <div className="terminal-header">
+              <div className="dot red" />
+              <div className="dot yellow" />
+              <div className="dot green" />
+              <div className="terminal-title">
+                usr@covelopers:~/project
+              </div>
+            </div>
+
+            <div className="terminal-body">
+              <div>
+                ➜ ~/project git checkout -b feature/user-auth
+              </div>
+              <div className="muted">
+                Switched to a new branch 'feature/user-auth'
+              </div>
+
+              <br />
+
+              <div>
+                ➜ ~/project npm run dev
+              </div>
+              <div className="muted">
+                available on http://localhost:3000 <br />
+                ready in 124ms
+              </div>
+
+              <div className="code-block">
+                <div className="comment">// src/components/Auth.tsx</div>
+                <div>
+                  export const Auth = () =&gt; {"{"}
+                </div>
+                <div className="indent">
+                  const [user, setUser] = useState(null);
+                </div>
+                <div className="indent comment">
+                  // TODO: Implement Supabase login
+                </div>
+                <div>{"}"}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
+
   );
 }
