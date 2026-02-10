@@ -192,8 +192,7 @@
 
 /* Tech Stack Bar */
 .tech-stack-bar {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 64px;
+  padding-top: 100px;
 }
 
 .tech-label {
@@ -233,8 +232,7 @@
   display: flex;
   align-items: center;
   padding: 96px 24px;
-  background: var(--bg-dark);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: #003b49;
 }
 
 .value-grid {

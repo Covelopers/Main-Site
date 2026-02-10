@@ -3,8 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 96px 24px;
-  background: rgba(0, 36, 57, 0.5);
+  background: var(--brand-800);
 }
 
 .stack-grid {
