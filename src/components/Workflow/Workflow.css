@@ -138,3 +138,9 @@
     padding: 0 24px;
   }
 }
+
+@media (max-width: 840px) {
+  .workflow {
+    padding: 72px 24px;
+  }
+}
