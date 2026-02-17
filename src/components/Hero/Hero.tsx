@@ -28,7 +28,7 @@ export function Hero() {
             </p>
             
             <div className="hero-actions">
-              <a href="https://discord.gg/62vkfP7W5A" target="_blank" rel="noopener noreferrer" className="apply-btn">
+              <a href="https://tally.so/r/VL0Q6j" target="_blank" rel="noopener noreferrer" className="apply-btn">
                 Start Building
                 <span>→</span>
               </a>

@@ -30,7 +30,7 @@ export function Footer() {
 
             <div className="footer-column">
               <h4>Community</h4>
-              <a href="https://discord.gg/62vkfP7W5A" target="_blank" rel="noopener noreferrer">
+              <a href="https://tally.so/r/VL0Q6j" target="_blank" rel="noopener noreferrer">
                 <FaDiscord className="social-icon" /> Discord
               </a>
               <a href="https://twitter.com/your-handle" target="_blank" rel="noopener noreferrer">

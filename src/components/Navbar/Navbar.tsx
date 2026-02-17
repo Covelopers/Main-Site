@@ -35,7 +35,7 @@ export function Navbar() {
         </div>
         <div className="nav-right">
           <a
-            href="https://discord.gg/62vkfP7W5A"
+            href="https://tally.so/r/VL0Q6j"
             target="_blank"
             rel="noopener noreferrer"
             className="git-push-btn"
