@@ -4,6 +4,7 @@ import  { Navbar } from "./components/Navbar/Navbar";
 import  { Hero }  from "./components/Hero/Hero";
 import  { Workflow }  from "./components/Workflow/Workflow";
 import  { Stack }  from "./components/Stack/Stack";
+import  { Dashboard } from "./components/Dashboard/Dashboard";
 import  { FAQ } from "./components/FAQ/FAQ";
 import  { Contact } from "./components/Contact/Contact";
 import  { Footer } from "./components/Footer/Footer";
@@ -23,6 +24,10 @@ function App() {
 
         <section id="stack" className="stack">
           <Stack />
+        </section>
+
+        <section id="dashboard" className="dashboard">
+          <Dashboard />
         </section>
 
         <section id="faq" className="faq">
