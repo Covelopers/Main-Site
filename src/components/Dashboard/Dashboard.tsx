@@ -23,6 +23,7 @@ const SECTIONS: { key: Project["status"]; label: string }[] = [
 export function Dashboard() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [openSection, setOpenSection] = useState<Project["status"]>("completed");
 
   useEffect(() => {
     supabase
@@ -39,8 +40,6 @@ export function Dashboard() {
   const byStatus = (key: Project["status"]) =>
     projects.filter((p) => p.status === key);
 
-  const maxRows = Math.max(...SECTIONS.map(({ key }) => byStatus(key).length), 0);
-
   return (
     <section id="dashboard" className="dashboard">
       <div className="dashboard-inner">
@@ -53,20 +52,22 @@ export function Dashboard() {
           <div className="dashboard-loading">Loading projects…</div>
         ) : (
           <div className="dashboard-grid">
-            {/* Headers */}
-            {SECTIONS.map(({ key, label }) => (
-              <div key={key} className={`column-header column-header--${key}`}>
-                <span className={`status-dot status-dot--${key}`} />
-                <h3>{label}</h3>
-                <span className="column-count">{byStatus(key).length}</span>
-              </div>
-            ))}
-
-            {/* Card rows — one slot per column per row */}
-            {Array.from({ length: maxRows }).map((_, i) =>
-              SECTIONS.map(({ key }) => {
-                const project = byStatus(key)[i];
-                return project ? (
+            {SECTIONS.map(({ key, label }) => {
+              const isOpen = openSection === key;
+              return (
+              <div key={key} className={`dashboard-column${isOpen ? " dashboard-column--open" : ""}`}>
+                <button
+                  className={`column-header column-header--${key}`}
+                  onClick={() => setOpenSection(key)}
+                  aria-expanded={isOpen}
+                >
+                  <span className={`status-dot status-dot--${key}`} />
+                  <h3>{label}</h3>
+                  <span className="column-count">{byStatus(key).length}</span>
+                  <span className="column-chevron">{isOpen ? "▲" : "▼"}</span>
+                </button>
+                <div className="column-cards">
+                {byStatus(key).map((project) => (
                   <div key={project.id} className="project-card">
                     {project.image_url && (
                       <img
@@ -106,11 +107,11 @@ export function Dashboard() {
                       )}
                     </div>
                   </div>
-                ) : (
-                  <div key={`${key}-empty-${i}`} className="project-card project-card--empty" />
-                );
-              })
-            )}
+                ))}
+                </div>
+              </div>
+              );
+            })}
           </div>
         )}
       </div>

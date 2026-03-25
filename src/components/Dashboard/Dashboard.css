@@ -24,12 +24,16 @@
   padding: 48px 0;
 }
 
-/* Flat grid — headers in row 1, cards in subsequent rows */
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 16px;
-  row-gap: 1px;
+  gap: 16px;
+}
+
+.dashboard-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
   background: rgba(255, 255, 255, 0.04);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -38,6 +42,24 @@
 @media (max-width: 900px) {
   .dashboard-grid {
     grid-template-columns: 1fr;
+  }
+
+  .column-cards {
+    display: none;
+  }
+
+  .dashboard-column--open .column-cards {
+    display: block;
+  }
+
+  .project-card {
+    height: auto;
+    overflow: visible;
+  }
+
+  .project-description {
+    height: auto;
+    overflow: visible;
   }
 }
 
@@ -49,6 +71,29 @@
   padding: 12px 16px;
   background: var(--bg-card);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+.column-header:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.column-chevron {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  margin-left: auto;
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .column-chevron {
+    display: inline;
+  }
 }
 
 .column-header h3 {
@@ -56,7 +101,6 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  flex: 1;
 }
 
 .column-count {
@@ -90,20 +134,22 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 /* Project card */
-.project-card--empty {
-  background: var(--bg-card);
-  min-height: 80px;
-}
-
 .project-card {
   background: var(--bg-card);
   padding: 16px;
   transition: background 0.15s ease;
+  height: 280px;
+  overflow: hidden;
 }
 
 .project-card:hover {
@@ -150,6 +196,8 @@
   font-size: 0.825rem;
   color: var(--text-muted);
   line-height: 1.5;
+  height: 3em;
+  overflow: hidden;
 }
 
 /* Tech tags */
