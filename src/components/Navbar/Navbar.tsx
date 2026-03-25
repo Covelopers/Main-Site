@@ -26,6 +26,9 @@ export function Navbar() {
           <button onClick={() => scrollToSection("stack")}>
             Tech Stack
           </button>
+          <button onClick={() => scrollToSection("dashboard")}>
+            Projects
+          </button>
           <button onClick={() => scrollToSection("faq")}>
             FAQ
           </button>
