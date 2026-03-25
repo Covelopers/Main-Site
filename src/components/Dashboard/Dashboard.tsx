@@ -12,6 +12,7 @@ type Project = {
   image_url: string | null;
   display_order: number | null;
   visible: boolean;
+  tally_placeholder?: string;
 };
 
 const SECTIONS: { key: Project["status"]; label: string }[] = [
@@ -23,7 +24,8 @@ const SECTIONS: { key: Project["status"]; label: string }[] = [
 export function Dashboard() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-  const [openSection, setOpenSection] = useState<Project["status"]>("completed");
+  const [openSection, setOpenSection] =
+    useState<Project["status"]>("completed");
 
   useEffect(() => {
     supabase
@@ -32,7 +34,24 @@ export function Dashboard() {
       .eq("visible", true)
       .order("display_order", { ascending: true })
       .then(({ data }) => {
-        setProjects(data ?? []);
+        if (data) {
+          // TODO: Remove dummy data - hardcoded tally placeholders for testing
+          const projectsWithPlaceholders = data.map((project, index) => {
+            let tally_placeholder: string | undefined;
+            if (index === 0) tally_placeholder = "Placeholder1";
+            else if (index === 1) tally_placeholder = "Placeholder2";
+            else if (index === 2) tally_placeholder = "Placeholder3";
+
+            return {
+              ...project,
+              tally_placeholder,
+            };
+          });
+
+          setProjects(projectsWithPlaceholders);
+        } else {
+          setProjects([]);
+        }
         setLoading(false);
       });
   }, []);
@@ -55,61 +74,69 @@ export function Dashboard() {
             {SECTIONS.map(({ key, label }) => {
               const isOpen = openSection === key;
               return (
-              <div key={key} className={`dashboard-column${isOpen ? " dashboard-column--open" : ""}`}>
-                <button
-                  className={`column-header column-header--${key}`}
-                  onClick={() => setOpenSection(key)}
-                  aria-expanded={isOpen}
+                <div
+                  key={key}
+                  className={`dashboard-column${isOpen ? " dashboard-column--open" : ""}`}
                 >
-                  <span className={`status-dot status-dot--${key}`} />
-                  <h3>{label}</h3>
-                  <span className="column-count">{byStatus(key).length}</span>
-                  <span className="column-chevron">{isOpen ? "▲" : "▼"}</span>
-                </button>
-                <div className="column-cards">
-                {byStatus(key).map((project) => (
-                  <div key={project.id} className="project-card">
-                    {project.image_url && (
-                      <img
-                        src={project.image_url}
-                        alt={project.name}
-                        className="project-image"
-                      />
-                    )}
-                    <div className="project-body">
-                      <div className="project-title-row">
-                        <h4>{project.name}</h4>
-                        {project.url && (
-                          <a
-                            href={project.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="project-link"
-                            aria-label={`Visit ${project.name}`}
-                          >
-                            ↗
-                          </a>
+                  <button
+                    className={`column-header column-header--${key}`}
+                    onClick={() => setOpenSection(key)}
+                    aria-expanded={isOpen}
+                  >
+                    <span className={`status-dot status-dot--${key}`} />
+                    <h3>{label}</h3>
+                    <span className="column-count">{byStatus(key).length}</span>
+                    <span className="column-chevron">{isOpen ? "▲" : "▼"}</span>
+                  </button>
+                  <div className="column-cards">
+                    {byStatus(key).map((project) => (
+                      <div key={project.id} className="project-card">
+                        {project.image_url && (
+                          <img
+                            src={project.image_url}
+                            alt={project.name}
+                            className="project-image"
+                          />
                         )}
-                      </div>
-                      {project.description && (
-                        <p className="project-description">
-                          {project.description}
-                        </p>
-                      )}
-                      {project.tech_stack && project.tech_stack.length > 0 && (
-                        <div className="tech-tags">
-                          {project.tech_stack.map((tech) => (
-                            <span key={tech} className="tech-tag">
-                              {tech}
-                            </span>
-                          ))}
+                        <div className="project-body">
+                          <div className="project-title-row">
+                            <h4>{project.name}</h4>
+                            {project.url && (
+                              <a
+                                href={
+                                  project.tally_placeholder
+                                    ? `https://tally.so/r/VL0Q6j?project=${encodeURIComponent(project.tally_placeholder)}`
+                                    : project.url
+                                }
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="project-link"
+                                aria-label={`Visit ${project.name}`}
+                              >
+                                ↗
+                              </a>
+                            )}
+                          </div>
+                          {project.description && (
+                            <p className="project-description">
+                              {project.description}
+                            </p>
+                          )}
+                          {project.tech_stack &&
+                            project.tech_stack.length > 0 && (
+                              <div className="tech-tags">
+                                {project.tech_stack.map((tech) => (
+                                  <span key={tech} className="tech-tag">
+                                    {tech}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
                 </div>
-              </div>
               );
             })}
           </div>
