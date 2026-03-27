@@ -12,7 +12,6 @@ type Project = {
   image_url: string | null;
   display_order: number | null;
   visible: boolean;
-  tally_placeholder?: string;
 };
 
 const SECTIONS: { key: Project["status"]; label: string }[] = [
@@ -34,24 +33,7 @@ export function Dashboard() {
       .eq("visible", true)
       .order("display_order", { ascending: true })
       .then(({ data }) => {
-        if (data) {
-          // TODO: Remove dummy data - hardcoded tally placeholders for testing
-          const projectsWithPlaceholders = data.map((project, index) => {
-            let tally_placeholder: string | undefined;
-            if (index === 0) tally_placeholder = "Placeholder1";
-            else if (index === 1) tally_placeholder = "Placeholder2";
-            else if (index === 2) tally_placeholder = "Placeholder3";
-
-            return {
-              ...project,
-              tally_placeholder,
-            };
-          });
-
-          setProjects(projectsWithPlaceholders);
-        } else {
-          setProjects([]);
-        }
+        setProjects(data ?? []);
         setLoading(false);
       });
   }, []);
@@ -91,31 +73,29 @@ export function Dashboard() {
                   <div className="column-cards">
                     {byStatus(key).map((project) => (
                       <div key={project.id} className="project-card">
-                        {project.image_url && (
-                          <img
-                            src={project.image_url}
-                            alt={project.name}
-                            className="project-image"
-                          />
-                        )}
+                        <div className="project-image-wrap">
+                          {project.image_url ? (
+                            <img
+                              src={project.image_url}
+                              alt={project.name}
+                              className="project-image"
+                            />
+                          ) : (
+                            <span className="project-image-unavailable">Image Unavailable</span>
+                          )}
+                        </div>
                         <div className="project-body">
                           <div className="project-title-row">
                             <h4>{project.name}</h4>
-                            {project.url && (
-                              <a
-                                href={
-                                  project.tally_placeholder
-                                    ? `https://tally.so/r/VL0Q6j?project=${encodeURIComponent(project.tally_placeholder)}`
-                                    : project.url
-                                }
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="project-link"
-                                aria-label={`Visit ${project.name}`}
-                              >
-                                ↗
-                              </a>
-                            )}
+                            <a
+                              href={`https://tally.so/r/VL0Q6j?project=${encodeURIComponent(project.name)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="project-link"
+                              aria-label={`Visit ${project.name}`}
+                            >
+                              ↗
+                            </a>
                           </div>
                           {project.description && (
                             <p className="project-description">

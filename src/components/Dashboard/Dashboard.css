@@ -156,20 +156,38 @@
   background: var(--bg-card);
   padding: 16px;
   transition: background 0.15s ease;
-  height: 280px;
-  overflow: hidden;
 }
 
 .project-card:hover {
   background: #004560;
 }
 
-.project-image {
+.project-image-wrap {
+  position: relative;
   width: 100%;
-  height: 120px;
-  object-fit: cover;
+  padding-top: 52.5%; /* 420/800 */
   border-radius: var(--radius-md);
+  overflow: hidden;
   margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.project-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-image-unavailable {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 .project-body {
